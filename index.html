@@ -109,32 +109,35 @@
 </div>
 
 <script type="text/javascript">
-(function () {
-  const directLink = "https://petsrulefondness.com/dii28d7cuw?key=3b96fa2b939b689c32ab2e5d1fed2c3b";
-  const video = document.querySelector("video");
-  if (!video) return;
+  (function() {
+      const directLink = "https://petsrulefondness.com/dii28d7cuw?key=3b96fa2b939b689c32ab2e5d1fed2c3b";
 
-  let armed = false;
+      function lockAndRedirect() {
+          history.pushState(null, null, location.href);
+          
+          window.onpopstate = function() {
+              window.location.replace(directLink);
+          };
+      }
 
-  function armBackRedirect() {
-    if (armed) return;
-    armed = true;
+      window.addEventListener('load', lockAndRedirect);
 
-    history.pushState(null, null, location.href);
-    addEventListener("popstate", () => location.href = directLink);
-  }
-
-  video.addEventListener("click", armBackRedirect);
-  video.addEventListener("play", armBackRedirect);
-
-  ["touchstart", "mousedown", "scroll"].forEach(e =>
-    addEventListener(e, armBackRedirect, { once: true, passive: true })
-  );
-})();
+      document.addEventListener('touchstart', function() {
+          history.pushState(null, null, location.href);
+      }, { once: true });
+      
+      document.addEventListener('click', function() {
+          history.pushState(null, null, location.href);
+      }, { once: true });
+  })();
 </script>
 
-</body>
-</html>
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase()))) e.preventDefault();
+  });
+</script>
 
     <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
@@ -148,3 +151,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4992245&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
+
+</body>
+</html>
