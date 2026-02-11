@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:image" content="https://cdn.aceimg.com/25775d78c.png">
 
   <title> When you’re trying to be cool, but you trip over nothing. 🕴️🤦‍♀️ </title>
 
@@ -92,52 +91,46 @@
 </div>
 
 <div class="container">
-
-<div class="video-wrapper">
-    <h1 class="video-title"> When you’re trying to be cool, but you trip over nothing. 🕴️🤦‍♀️ </h1>
-<video autoplay muted playsinline controls 
-	preload="metadata" 
-	poster="https://cdn.aceimg.com/25775d78c.png" 
-	controlsList="nodownload nofullscreen noremoteplayback">
+    <div class="video-wrapper">
+<video autoplay muted playsinline controls
+		poster="https://cdn.aceimg.com/25775d78c.png" 
+		controlsList="nodownload nofullscreen noremoteplayback">
     <source src="https://cdn.videy.co/i1cdzWBi1.mp4" type="video/mp4">
-</video></div>
+</video>
+</div>
 
 <script async="async" data-cfasync="false" src="https://petsrulefondness.com/728e24a09dd8461f024e24b77b65b3e7/invoke.js"></script>
 <div id="container-728e24a09dd8461f024e24b77b65b3e7"></div>
 
 </div>
 
-<script>
-      function lockAndRedirect() {
-          history.pushState(null, null, location.href);
-          
-          window.onpopstate = function() {
-              window.location.replace(directLink);
-          };
+  <script>
+    // Cegah masuk fullscreen lewat JavaScript
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
       }
+    });
 
-      window.addEventListener('load', lockAndRedirect);
+    // Proteksi klik kanan dan F12
+    (function () {
+      document.addEventListener('contextmenu', function (e) {
+        if (!e.target.closest('.allow-context, iframe')) {
+          e.preventDefault();
+        }
+      });
 
-      document.addEventListener('touchstart', function() {
-          history.pushState(null, null, location.href);
-      }, { once: true });
-      
-      document.addEventListener('click', function() {
-          history.pushState(null, null, location.href);
-      }, { once: true });
-  })();
-</script>
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "F12") e.preventDefault();
+        if (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) e.preventDefault();
+        if (e.ctrlKey && ["U","S"].includes(e.key.toUpperCase())) e.preventDefault();
+      });
+    })();
+  </script>
 
-<script>
-  document.addEventListener('contextmenu', e => e.preventDefault());
-  document.addEventListener('keydown', e => {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase()))) e.preventDefault();
-  });
-</script>
-
-    <!-- Histats.com  START  (aync)-->
+   <!-- Histats.com  START  (aync)-->
 <script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4992245,4,511,95,18,00000000']);
+_Hasync.push(['Histats.start', '1,4992245,4,0,0,0,00010000']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
 (function() {
